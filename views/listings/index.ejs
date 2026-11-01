@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust</title>
+</head>
+<body>
+    <h1>Welcome to Wanderlust!</h1>
+
+    
+<% for(let listing of allListings) { %>
+    <h2><%= listing.title %></h2>
+    <!-- <p><%= listing.description %></p>
+    <p>Price: ₹<%= listing.price %></p>
+    <p>Location: <%= listing.location %></p> -->
+<% } %>
+</body>
+</html>
