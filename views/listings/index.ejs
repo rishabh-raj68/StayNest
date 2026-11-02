@@ -6,14 +6,16 @@
     <title>WanderLust</title>
 </head>
 <body>
-    <h1>Welcome to Wanderlust!</h1>
+    <h3>Welcome to Wanderlust!</h3>
+    <form method="GET" action="/listings/new">
+        <button type="submit">Create New Listing</button>
+    </form>
 
-    
+   <ul>
 <% for(let listing of allListings) { %>
-    <h2><%= listing.title %></h2>
-    <!-- <p><%= listing.description %></p>
-    <p>Price: ₹<%= listing.price %></p>
-    <p>Location: <%= listing.location %></p> -->
+    <li><a href="/listings/<%= listing._id %>"><%= listing.title %></a></li>
+   
 <% } %>
+   </ul>
 </body>
 </html>
