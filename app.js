@@ -6,6 +6,7 @@ import Listing from './models/listing.js';
 import path from 'path';
 import { fileURLToPath } from "url";
 import methodOverride from 'method-override';
+import ejsMate from "ejs-mate";
 
 main()
     .then(() => {
@@ -27,6 +28,8 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
+app.engine("ejs", ejsMate);
+app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", (req,res) => {
     res.send("root is working");
